@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.primaryInput {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-blue focus:ring-primary-blue sm:text-sm;
+}
+.primaryLabel {
+  @apply block font-medium;
+}
+.primaryButton {
+  @apply rounded-md border border-transparent bg-primary-blue px-4 py-2 text-sm w-full font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none;
+}
