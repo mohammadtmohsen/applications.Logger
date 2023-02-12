@@ -1,3 +1,4 @@
+import { AuditLog } from "../../services/types";
 import { formatDate } from "../../utils/HelperFunctions";
 import { Column } from "./Table";
 
@@ -7,7 +8,7 @@ export const Columns: Array<Column> = [
   {
     title: "Application ID",
     dataIndex: "applicationId",
-    render: (_: any, item: any) => {
+    render: (_: any, item: AuditLog) => {
       return (
         <div className={`${item.applicationId ? "" : "opacity-50"} text-sm`}>
           {item.applicationId || "-/-"}
@@ -19,7 +20,7 @@ export const Columns: Array<Column> = [
   {
     title: "Action Details",
     dataIndex: "actionDetails",
-    render: (_: any, item: any) => {
+    render: (_: any, item: AuditLog) => {
       return (
         <div
           className={`${
@@ -34,9 +35,11 @@ export const Columns: Array<Column> = [
   {
     title: "Date: Time",
     dataIndex: "creationTimestamp",
-    render: (_: any, item: any) => {
+    render: (_: any, item: AuditLog) => {
       return (
-        <div className="min-w-[260px] text-sm">{formatDate(item.creationTimestamp)}</div>
+        <div className="min-w-[260px] text-sm">
+          {formatDate(item.creationTimestamp)}
+        </div>
       );
     },
   },

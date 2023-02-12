@@ -10,5 +10,6 @@ export type AuditLog = {
   source: string;
   ownerId: number | null;
   logInfo: string | null;
+  actionDetails: string | null;
   creationTimestamp: string;
 };
